@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLaptopCode, FaMobileAlt, FaServer, FaPaintBrush } from "react-icons/fa";
+import { FaLaptopCode, FaMobileAlt, FaServer } from "react-icons/fa";
 
 function Services() {
   const services = [
@@ -17,11 +17,6 @@ function Services() {
       icon: <FaServer className="text-indigo-600 text-4xl mb-4" />,
       title: "Backend & API Development",
       description: "Designing scalable server-side solutions, RESTful APIs, and integrating databases with Node.js & Convex."
-    },
-    {
-      icon: <FaPaintBrush className="text-indigo-600 text-4xl mb-4" />,
-      title: "UI/UX Design",
-      description: "Crafting clean and modern user interfaces with great user experience in mind."
     }
   ];
 
@@ -33,7 +28,7 @@ function Services() {
       </h1>
 
       {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl w-full">
         {services.map((service, index) => (
           <div
             key={index}
