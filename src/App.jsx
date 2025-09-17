@@ -6,6 +6,7 @@ import About from "./About";
 import Services from "./Services";
 import Contact from "./Contact";
 import Navbar from "./Navbar";
+import Projects from "./Projects";
 
 function App() {
   // Animation variants for staggered section appearance
@@ -97,6 +98,7 @@ function App() {
         viewport={{ once: true }}
         variants={sectionVariant}
       >
+        <Projects />
         <Contact />
       </motion.div>
     </div>
