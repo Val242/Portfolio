@@ -1,12 +1,23 @@
 import React from "react";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
-import { SiMongodb, SiTailwindcss } from "react-icons/si";
+import { SiMongodb, SiTailwindcss, SiTypescript } from "react-icons/si";
 import { motion } from "framer-motion";
 import pp from "./assets/pic.jpg";
 import Navbar from "./Navbar";
 
 function About() {
   const iconHover = { scale: 1.3, rotate: 10 };
+
+  const skills = [
+    { icon: FaHtml5, name: "HTML5" },
+    { icon: FaCss3Alt, name: "CSS3" },
+    { icon: FaJs, name: "JavaScript" },
+    { icon: FaReact, name: "React" },
+    { icon: FaNodeJs, name: "Node.js" },
+    { icon: SiMongodb, name: "MongoDB" },
+    { icon: SiTailwindcss, name: "TailwindCSS" },
+    { icon: SiTypescript, name: "TypeScript" },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex flex-col items-center px-6 lg:px-20 py-16">
@@ -65,17 +76,20 @@ function About() {
           <div>
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Skills</h2>
             <div className="flex flex-wrap gap-6 text-4xl text-indigo-600">
-              {[FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, SiMongodb, SiTailwindcss].map(
-                (Icon, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={iconHover}
-                    className="cursor-pointer transition-colors hover:text-indigo-400"
-                  >
-                    <Icon />
-                  </motion.div>
-                )
-              )}
+              {skills.map(({ icon: Icon, name }, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={iconHover}
+                  className="relative group cursor-pointer transition-colors hover:text-indigo-400"
+                >
+                  <Icon />
+
+                  {/* Tooltip */}
+                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm bg-gray-800 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-all">
+                    {name}
+                  </span>
+                </motion.div>
+              ))}
             </div>
           </div>
         </motion.div>

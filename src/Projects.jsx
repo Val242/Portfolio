@@ -17,7 +17,7 @@ const projects = [
   },
   {
     title: "Traveling",
-    description: "An AI-powered travel planning app that generates travel itineraries.",
+    description: "A Traveling website blended with great options.",
     image: Traveling,
     github: "https://github.com/Val242/Traveling.git",
     live: "https://traveling-xyms.vercel.app/",
