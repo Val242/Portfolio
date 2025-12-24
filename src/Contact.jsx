@@ -105,7 +105,7 @@ function Contact() {
 
           {/* Download Resume Button */}
           <motion.a
-            href="EBONG VALENTINE RESUME.pdf"
+            href="EBONG_VALENTINE_CV.pdf"
             download
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
