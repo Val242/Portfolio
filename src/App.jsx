@@ -82,7 +82,7 @@ function App() {
           <img
             src={pp}
             alt="Valentine"
-            className="w-64 h-64 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl relative z-10 border-8 border-white dark:border-slate-800"
+            className="w-64 h-64 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl relative z-10 border-4 border-white dark:border-slate-800"
           />
         </motion.div>
       </motion.section>

@@ -17,7 +17,7 @@ function Services() {
     {
       icon: <FaServer />,
       title: "Backend Solutions",
-      description: "Scalable APIs and robust server logic using Node.js & MongoDB.",
+      description: "Robust server logic using NestJS X Prisma, Node.js, and SpringBoot X Hibernate.",
     },
   ];
 

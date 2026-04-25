@@ -1,6 +1,6 @@
 import React from "react";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
-import { SiMongodb, SiTailwindcss, SiTypescript, SiNestjs, SiPrisma, SiPostgresql } from "react-icons/si";
+import { SiMongodb, SiTailwindcss, SiTypescript, SiNestjs, SiPrisma, SiPostgresql, SiSpringboot, SiHibernate } from "react-icons/si";
 import { motion } from "framer-motion";
 import pp from "./assets/pic.jpg";
 import Navbar from "./Navbar";
@@ -14,8 +14,8 @@ function About() {
     { icon: FaJs, name: "JavaScript" },
     { icon: FaReact, name: "React" },
     { icon: FaNodeJs, name: "Node.js" },
-    { icon: SiNestjs, name: "NestJS" },
-    { icon: SiPrisma, name: "Prisma" },
+    { icon: SiNestjs, name: "NestJS X Prisma ORM" },
+    { icon: SiSpringboot, name: "SpringBoot X Hibernate" },
     { icon: SiPostgresql, name: "PostgreSQL" },
     { icon: SiMongodb, name: "MongoDB" },
     { icon: SiTailwindcss, name: "TailwindCSS" },
@@ -46,11 +46,11 @@ function About() {
         >
           <div className="space-y-6 text-muted text-xl leading-relaxed">
             <p>
-              Hi, I’m <span className="font-bold text-foreground underline decoration-primary decoration-4 underline-offset-4">Valentine</span>, 
+              Hi, I’m <span className="font-bold text-foreground underline decoration-primary decoration-4 underline-offset-4">Valentine</span>,
               a Fullstack Developer dedicated to crafting exceptional digital products.
             </p>
             <p>
-              I bridge the gap between complex backend logic and intuitive frontend design. 
+              I bridge the gap between complex backend logic and intuitive frontend design.
               My approach is centered on efficiency, scalability, and user-centric results.
             </p>
           </div>
