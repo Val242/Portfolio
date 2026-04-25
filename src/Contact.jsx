@@ -6,115 +6,78 @@ import { motion } from "framer-motion";
 function Contact() {
   const contactItems = [
     {
-      icon: <FaEnvelope className="text-indigo-600 text-2xl md:text-3xl" />,
+      icon: <FaEnvelope />,
       label: "akumengwene@gmail.com",
       link: "mailto:akumengwene@gmail.com",
     },
     {
-      icon: <FaPhone className="text-indigo-600 text-2xl md:text-3xl" />,
+      icon: <FaPhone />,
       label: "+237 671 369 673",
       link: "tel:+237671369673",
     },
     {
-      icon: <FaMapMarkerAlt className="text-indigo-600 text-2xl md:text-3xl" />,
+      icon: <FaMapMarkerAlt />,
       label: "Douala, Cameroon",
       link: null,
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex flex-col items-center px-6 lg:px-20 py-16 relative overflow-hidden">
-      
-      {/* Animated Background Blobs */}
-      <motion.div
-        className="absolute w-72 h-72 bg-indigo-300 rounded-full opacity-20 -top-20 -left-20"
-        animate={{ x: [0, 200, 0], y: [0, 100, 0] }}
-        transition={{ duration: 25, repeat: Infinity, repeatType: "mirror" }}
-      />
-      <motion.div
-        className="absolute w-96 h-96 bg-pink-300 rounded-full opacity-20 bottom-0 right-0"
-        animate={{ x: [0, -150, 0], y: [0, -100, 0] }}
-        transition={{ duration: 30, repeat: Infinity, repeatType: "mirror" }}
-      />
-
+    <div className="bg-background flex flex-col items-center px-6 lg:px-40 py-24 pb-40">
       {/* Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="relative z-10 text-4xl lg:text-5xl font-extrabold text-gray-800 mb-12 text-center"
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
       >
-        Get in <span className="text-indigo-600">Touch</span>
-      </motion.h1>
+        <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">Contact</h2>
+        <h1 className="text-4xl lg:text-5xl font-black">Let's <span className="text-primary italic">connect</span>.</h1>
+      </motion.div>
 
-      {/* Contact Info */}
-      <div className="relative z-10 flex flex-col items-center space-y-6 text-gray-700 w-full max-w-lg">
+      {/* Contact Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mb-20">
         {contactItems.map((item, index) => (
           <motion.a
             key={index}
             href={item.link ? item.link : "#"}
             target={item.link ? "_blank" : "_self"}
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="flex items-center gap-4 w-full bg-white rounded-xl shadow-md p-5 hover:shadow-xl transition-shadow text-gray-700"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            className="glass rounded-[2rem] p-8 flex flex-col items-center text-center group hover:border-primary/50 transition-all shadow-sm"
           >
-            {item.icon}
-            <span className="text-lg md:text-xl font-medium">{item.label}</span>
+            <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+              {item.icon}
+            </div>
+            <span className="text-lg font-bold text-foreground/80 break-all">{item.label}</span>
           </motion.a>
         ))}
-
-        {/* Social Icons + Resume Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex flex-col items-center mt-6 gap-6"
-        >
-          {/* Social Icons */}
-          <div className="flex gap-8 text-3xl md:text-4xl text-gray-600">
-            <motion.a
-              href="https://x.com/EbongValentineX?t=y-ncZQcYc3hqBUvEwlDcMA&s=09"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.3, color: "#1DA1F2" }}
-              className="cursor-pointer"
-            >
-              <FaTwitter />
-            </motion.a>
-            <motion.a
-              href="https://www.linkedin.com/in/ebong-valentine-2b1157322"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.3, color: "#0077B5" }}
-              className="cursor-pointer"
-            >
-              <FaLinkedin />
-            </motion.a>
-            <motion.a
-              href="https://github.com/Val242"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.3, color: "#000000" }}
-              className="cursor-pointer"
-            >
-              <FaGithub />
-            </motion.a>
-          </div>
-
-          {/* Download Resume Button */}
-          <motion.a
-            href="EBONG_VALENTINE_CV.pdf"
-            download
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-4 inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-indigo-500 transition-all"
-          >
-            Download Resume
-          </motion.a>
-        </motion.div>
       </div>
+
+      {/* Footer-like section */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="text-center space-y-10"
+      >
+        <div className="flex gap-10 justify-center text-3xl text-muted">
+          <a href="https://x.com/EbongValentineX" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:scale-110 transform"><FaTwitter /></a>
+          <a href="https://linkedin.com/in/ebong-valentine" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:scale-110 transform"><FaLinkedin /></a>
+          <a href="https://github.com/Val242" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:scale-110 transform"><FaGithub /></a>
+        </div>
+        
+        <a
+          href="EBONG_VALENTINE_CV.pdf"
+          download
+          className="inline-block bg-foreground text-background dark:bg-foreground dark:text-background px-12 py-5 rounded-full font-black text-lg hover:scale-105 transition-transform shadow-2xl"
+        >
+          Download Resume
+        </a>
+      </motion.div>
     </div>
   );
 }

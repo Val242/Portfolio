@@ -5,49 +5,52 @@ import { motion } from "framer-motion";
 function Services() {
   const services = [
     {
-      icon: <FaLaptopCode className="text-white text-5xl mb-4" />,
+      icon: <FaLaptopCode />,
       title: "Web Development",
-      description:
-        "Building responsive, modern, and user-friendly websites using React, Tailwind CSS, and Node.js.",
-      gradient: "from-indigo-500 via-purple-500 to-pink-500",
+      description: "Responsive, modern interfaces built with React & Tailwind CSS.",
     },
     {
-      icon: <FaMobileAlt className="text-white text-5xl mb-4" />,
-      title: "Mobile App Development",
-      description:
-        "Creating cross-platform mobile apps using React Native that run smoothly on iOS and Android.",
-      gradient: "from-green-400 via-teal-500 to-blue-500",
+      icon: <FaMobileAlt />,
+      title: "App Development",
+      description: "Cross-platform mobile experiences that feel native and fast.",
     },
     {
-      icon: <FaServer className="text-white text-5xl mb-4" />,
-      title: "Backend & API Development",
-      description:
-        "Designing scalable server-side solutions, RESTful APIs, and integrating databases with Node.js & Convex.",
-      gradient: "from-yellow-400 via-orange-500 to-red-500",
+      icon: <FaServer />,
+      title: "Backend Solutions",
+      description: "Scalable APIs and robust server logic using Node.js & MongoDB.",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 flex flex-col items-center px-6 lg:px-20 py-16">
+    <div className="bg-background flex flex-col items-center px-6 lg:px-40 py-24">
       {/* Heading */}
-      <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-800 mb-12 text-center">
-        My <span className="text-indigo-600">Services</span>
-      </h1>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">Expertise</h2>
+        <h1 className="text-4xl lg:text-5xl font-black">Services I <span className="text-primary italic">provide</span>.</h1>
+      </motion.div>
 
       {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl w-full">
         {services.map((service, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            className={`rounded-xl shadow-2xl p-8 flex flex-col items-center text-center cursor-pointer transform transition-transform hover:scale-105 bg-gradient-to-br ${service.gradient}`}
+            whileHover={{ y: -10 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="group glass rounded-[2.5rem] p-10 flex flex-col items-start text-left hover:border-primary/50 transition-colors"
           >
-            {service.icon}
-            <h2 className="text-xl font-semibold mt-4 text-white">{service.title}</h2>
-            <p className="text-white mt-2">{service.description}</p>
+            <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-3xl mb-8 group-hover:bg-primary group-hover:text-primary-foreground transition-colors shadow-lg shadow-primary/5">
+              {service.icon}
+            </div>
+            <h2 className="text-2xl font-black mb-4">{service.title}</h2>
+            <p className="text-muted leading-relaxed font-medium">{service.description}</p>
           </motion.div>
         ))}
       </div>

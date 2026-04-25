@@ -42,6 +42,10 @@ const router = createBrowserRouter([
 
 
 
+import { ThemeProvider } from './ThemeContext.jsx'
+
 createRoot(document.getElementById('root')).render(
-  <RouterProvider router = {router}></RouterProvider>
+  <ThemeProvider>
+    <RouterProvider router = {router}></RouterProvider>
+  </ThemeProvider>
 )

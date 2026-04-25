@@ -35,50 +35,42 @@ const projects = [
 
 function Projects() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 flex flex-col items-center px-6 lg:px-20 py-16">
+    <div className="bg-background flex flex-col items-center px-6 lg:px-40 py-24">
       {/* Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: -30 }}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl lg:text-5xl font-extrabold text-gray-800 mb-12 text-center"
+        className="text-center mb-16"
       >
-        My <span className="text-indigo-600">Projects</span>
-      </motion.h1>
+        <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">Portfolio</h2>
+        <h1 className="text-4xl lg:text-5xl font-black">Latest <span className="text-primary italic">works</span>.</h1>
+      </motion.div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 max-w-7xl w-full">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ rotateX: 5, rotateY: -5, scale: 1.05 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transition-all"
+            transition={{ duration: 0.8, delay: index * 0.1 }}
+            className="group block"
           >
-            {/* Image with overlay */}
-            <div className="relative h-60 overflow-hidden rounded-t-xl">
+            <div className="relative overflow-hidden rounded-[2.5rem] bg-secondary aspect-video mb-6">
               <motion.img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover"
-                whileHover={{ scale: 1.1, rotate: 1 }}
-                transition={{ duration: 0.5 }}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileHover={{ opacity: 1, scale: 1 }}
-                className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-4 transition-opacity"
-              >
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-6">
                 {project.github && (
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white text-2xl hover:text-gray-300"
+                    className="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center text-xl hover:scale-110 transition-transform"
                   >
                     <FaGithub />
                   </a>
@@ -88,41 +80,25 @@ function Projects() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white text-2xl hover:text-gray-300"
+                    className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center text-xl hover:scale-110 transition-transform"
                   >
                     <FaExternalLinkAlt />
                   </a>
                 )}
-              </motion.div>
+              </div>
             </div>
 
-            {/* Card Content */}
-            <motion.div
-              className="p-6"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <h2 className="text-xl font-semibold text-gray-800">{project.title}</h2>
-              <p className="text-gray-600 mt-2">{project.description}</p>
-
-              {/* Tech Tags */}
-              <div className="flex flex-wrap gap-2 mt-4">
+            <div className="px-2">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((tech, i) => (
-                  <motion.span
-                    key={i}
-                    className="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-sm shadow-sm"
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
-                  >
+                  <span key={i} className="text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full">
                     {tech}
-                  </motion.span>
+                  </span>
                 ))}
               </div>
-            </motion.div>
+              <h2 className="text-3xl font-black mb-3 group-hover:text-primary transition-colors">{project.title}</h2>
+              <p className="text-muted font-medium text-lg max-w-md">{project.description}</p>
+            </div>
           </motion.div>
         ))}
       </div>

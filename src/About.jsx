@@ -1,12 +1,12 @@
 import React from "react";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
-import { SiMongodb, SiTailwindcss, SiTypescript } from "react-icons/si";
+import { SiMongodb, SiTailwindcss, SiTypescript, SiNestjs, SiPrisma, SiPostgresql } from "react-icons/si";
 import { motion } from "framer-motion";
 import pp from "./assets/pic.jpg";
 import Navbar from "./Navbar";
 
 function About() {
-  const iconHover = { scale: 1.3, rotate: 10 };
+  const iconHover = { scale: 1.2, y: -5 };
 
   const skills = [
     { icon: FaHtml5, name: "HTML5" },
@@ -14,83 +14,83 @@ function About() {
     { icon: FaJs, name: "JavaScript" },
     { icon: FaReact, name: "React" },
     { icon: FaNodeJs, name: "Node.js" },
+    { icon: SiNestjs, name: "NestJS" },
+    { icon: SiPrisma, name: "Prisma" },
+    { icon: SiPostgresql, name: "PostgreSQL" },
     { icon: SiMongodb, name: "MongoDB" },
     { icon: SiTailwindcss, name: "TailwindCSS" },
     { icon: SiTypescript, name: "TypeScript" },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex flex-col items-center px-6 lg:px-20 py-16">
-      
+    <div className="bg-background flex flex-col items-center px-6 lg:px-40 py-24">
       {/* Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl lg:text-5xl font-extrabold text-gray-800 mb-10 text-center"
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        className="text-center mb-20"
       >
-        About <span className="text-indigo-600">Me</span>
-      </motion.h1>
+        <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">About Me</h2>
+        <h1 className="text-4xl lg:text-6xl font-black">Building with <span className="text-primary italic">purpose</span>.</h1>
+      </motion.div>
 
       {/* Content */}
-      <div className="flex flex-col lg:flex-row items-center gap-12 max-w-6xl">
-        {/* Image */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex-shrink-0"
-        >
-          <img
-            src={pp}
-            alt="Profile"
-            className="w-[280px] h-[280px] md:w-[350px] md:h-[350px] object-cover rounded-2xl shadow-xl border-4 border-indigo-500 hover:shadow-2xl transition-shadow"
-          />
-        </motion.div>
-
+      <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl">
         {/* Text */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-6 text-gray-700 text-lg leading-relaxed"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="space-y-8"
         >
-          <p>
-            Hi, I’m <span className="font-semibold text-indigo-600">Valentine</span>, 
-            a passionate <span className="font-semibold">Fullstack App & Web Developer</span> 
-            based in Cameroon. I love turning ideas into real digital products and 
-            bringing them to life with clean, efficient code.
-          </p>
-          <p>
-            My journey into tech started with curiosity and has grown into a deep 
-            passion for solving problems with software. I enjoy working across both 
-            the frontend and backend, building smooth user experiences and scalable 
-            systems.
-          </p>
-          <p>
-            When I’m not coding, I’m exploring new technologies, contributing to 
-            open-source, or brainstorming creative project ideas.
-          </p>
+          <div className="space-y-6 text-muted text-xl leading-relaxed">
+            <p>
+              Hi, I’m <span className="font-bold text-foreground underline decoration-primary decoration-4 underline-offset-4">Valentine</span>, 
+              a Fullstack Developer dedicated to crafting exceptional digital products.
+            </p>
+            <p>
+              I bridge the gap between complex backend logic and intuitive frontend design. 
+              My approach is centered on efficiency, scalability, and user-centric results.
+            </p>
+          </div>
 
-          {/* Skills Section */}
-          <div>
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Skills</h2>
-            <div className="flex flex-wrap gap-6 text-4xl text-indigo-600">
-              {skills.map(({ icon: Icon, name }, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={iconHover}
-                  className="relative group cursor-pointer transition-colors hover:text-indigo-400"
-                >
-                  <Icon />
-
-                  {/* Tooltip */}
-                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm bg-gray-800 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-all">
-                    {name}
-                  </span>
-                </motion.div>
-              ))}
+          <div className="pt-8 grid grid-cols-2 gap-8 border-t border-border">
+            <div>
+              <h3 className="text-2xl font-black mb-2">3+</h3>
+              <p className="text-muted text-sm uppercase font-bold tracking-widest">Years Experience</p>
             </div>
+            <div>
+              <h3 className="text-2xl font-black mb-2">20+</h3>
+              <p className="text-muted text-sm uppercase font-bold tracking-widest">Projects Done</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Skills Card */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="glass rounded-[2rem] p-10 relative overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl rounded-full" />
+          <h3 className="text-2xl font-black mb-8">My Tech Stack</h3>
+          <div className="grid grid-cols-4 gap-8">
+            {skills.map(({ icon: Icon, name }, index) => (
+              <motion.div
+                key={index}
+                whileHover={iconHover}
+                className="flex flex-col items-center gap-3 group"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center text-3xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors shadow-sm">
+                  <Icon />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                  {name}
+                </span>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
