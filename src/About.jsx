@@ -2,12 +2,8 @@ import React from "react";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiMongodb, SiTailwindcss, SiTypescript, SiNestjs, SiPrisma, SiPostgresql, SiSpringboot, SiHibernate } from "react-icons/si";
 import { motion } from "framer-motion";
-import pp from "./assets/pic.jpg";
-import Navbar from "./Navbar";
 
 function About() {
-  const iconHover = { scale: 1.2, y: -5 };
-
   const skills = [
     { icon: FaHtml5, name: "HTML5" },
     { icon: FaCss3Alt, name: "CSS3" },
@@ -23,7 +19,7 @@ function About() {
   ];
 
   return (
-    <div className="bg-background flex flex-col items-center px-6 lg:px-40 py-24">
+    <div className="bg-background flex flex-col items-center px-6 lg:px-40 py-24 overflow-hidden">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
@@ -36,13 +32,12 @@ function About() {
       </motion.div>
 
       {/* Content */}
-      <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl">
-        {/* Text */}
+      <div className="max-w-7xl w-full">
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="space-y-8"
+          className="space-y-8 max-w-3xl mx-auto text-center"
         >
           <div className="space-y-6 text-muted text-xl leading-relaxed">
             <p>
@@ -66,32 +61,37 @@ function About() {
             </div>
           </div>
         </motion.div>
+      </div>
 
-        {/* Skills Card */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="glass rounded-[2rem] p-10 relative overflow-hidden"
+      {/* Full Width Marquee */}
+      <div className="w-full mt-32 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-background to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-background to-transparent z-10" />
+        
+        <motion.div 
+          className="flex gap-12 items-center"
+          animate={{ 
+            x: [0, -2000], 
+          }}
+          transition={{ 
+            duration: 40, 
+            repeat: Infinity, 
+            ease: "linear" 
+          }}
         >
-          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl rounded-full" />
-          <h3 className="text-2xl font-black mb-8">My Tech Stack</h3>
-          <div className="grid grid-cols-4 gap-8">
-            {skills.map(({ icon: Icon, name }, index) => (
-              <motion.div
-                key={index}
-                whileHover={iconHover}
-                className="flex flex-col items-center gap-3 group"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center text-3xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors shadow-sm">
-                  <Icon />
-                </div>
-                <span className="text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                  {name}
-                </span>
-              </motion.div>
-            ))}
-          </div>
+          {[...skills, ...skills, ...skills, ...skills].map(({ icon: Icon, name }, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-4 group flex-shrink-0 bg-secondary/30 px-10 py-6 rounded-3xl border border-border/50 hover:border-primary transition-all shadow-sm"
+            >
+              <div className="text-5xl text-primary group-hover:scale-110 transition-transform">
+                <Icon />
+              </div>
+              <span className="text-xl font-black uppercase tracking-widest text-foreground/70">
+                {name}
+              </span>
+            </div>
+          ))}
         </motion.div>
       </div>
     </div>
