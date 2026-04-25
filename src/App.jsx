@@ -1,7 +1,6 @@
 import React from "react";
+import { Link } from "react-router";
 import { motion } from "framer-motion";
-//import { Analytics } from "@vercel/analytics/next"
-
 import pp from "./assets/pic.jpg";
 import About from "./About";
 import Services from "./Services";
@@ -12,111 +11,107 @@ import Projects from "./Projects";
 function App() {
   const sectionVariant = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
     },
   };
 
+  const textEntry = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, ease: "circOut" }
+    }
+  };
+
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300 overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
       <Navbar />
 
       {/* Hero Section */}
       <motion.section
         initial="hidden"
         animate="visible"
-        variants={sectionVariant}
-        className="flex flex-col-reverse lg:flex-row items-center justify-between px-8 lg:px-40 py-32 mt-20"
+        className="relative min-h-screen flex flex-col lg:flex-row items-center justify-between px-8 lg:px-40 py-32"
       >
-        <div className="space-y-6 text-center lg:text-left z-10 max-w-2xl">
-          <motion.p 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-primary font-bold uppercase tracking-widest text-sm"
+        <div className="space-y-10 text-center lg:text-left z-10 max-w-4xl">
+          <motion.div variants={textEntry} className="space-y-4">
+            <p className="text-primary font-black uppercase tracking-[0.4em] text-xs">
+              Based in Cameroon
+            </p>
+            <h1 className="text-6xl lg:text-[10rem] font-black leading-[0.85] tracking-tighter">
+              BEYOND <br />
+              <span className="text-primary italic">PIXELS</span>.
+            </h1>
+          </motion.div>
+
+          <motion.p
+            variants={textEntry}
+            className="text-muted text-xl lg:text-3xl font-medium max-w-2xl leading-tight"
           >
-            Available for freelance
+            I'm Valentine, a Fullstack Developer building digital solutions that are <span className="text-foreground">bold, efficient, and user-centric.</span>
           </motion.p>
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-5xl lg:text-8xl font-black leading-tight tracking-tight"
+
+          <motion.div
+            variants={textEntry}
+            className="pt-10 flex flex-wrap gap-6 justify-center lg:justify-start"
           >
-            Designing <span className="text-primary italic">digital</span> experiences.
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="text-muted text-lg lg:text-xl font-medium"
-          >
-            I'm Valentine, a Fullstack Developer based in Cameroon, 
-            focused on building clean, high-performance web and mobile applications.
-          </motion.p>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="pt-6 flex flex-wrap gap-4 justify-center lg:justify-start"
-          >
-            <button className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">
-              View Projects
-            </button>
-            <button className="bg-secondary text-secondary-foreground border border-border px-8 py-4 rounded-full font-bold hover:bg-border transition-colors">
-              Contact Me
-            </button>
+            <Link to="/projects" className="bg-primary text-primary-foreground px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:scale-105 transition-all shadow-2xl shadow-primary/30">
+              Explore My Work
+            </Link>
+            <Link to="contact" className="bg-transparent text-foreground border-2 border-border px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:bg-foreground hover:text-background transition-all">
+              Get In Touch
+            </Link>
           </motion.div>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, ease: "circOut" }}
-          className="relative mb-12 lg:mb-0"
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5, ease: "circOut" }}
+          className="relative mt-20 lg:mt-0 flex gap-4"
         >
-          <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
-          <img
-            src={pp}
-            alt="Valentine"
-            className="w-64 h-64 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl relative z-10 border-4 border-white dark:border-slate-800"
-          />
+          {/* Magazine/Editorial Style Image Strip Inspiration */}
+          <div className="w-1 h-[400px] bg-primary/20 absolute -left-4 rounded-full hidden lg:block" />
+          <div className="relative group">
+            <div className="absolute inset-x-0 -bottom-6 h-full bg-primary/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
+            <img
+              src={pp}
+              alt="Valentine"
+              className="w-72 h-96 lg:w-[450px] lg:h-[600px] object-cover rounded-[3rem] grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl border border-white/5 relative z-10"
+            />
+          </div>
+          <div className="w-1 h-[300px] bg-primary/20 absolute -right-4 top-20 rounded-full hidden lg:block" />
         </motion.div>
       </motion.section>
 
       {/* Sections Wrapper */}
-      <div className="space-y-32 pb-32">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={sectionVariant}
-        >
+      <div className="space-y-10">
+        <section id="about">
           <About />
-        </motion.div>
+        </section>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={sectionVariant}
-        >
+        <section id="services">
           <Services />
-        </motion.div>
+        </section>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={sectionVariant}
-        >
+        <section id="projects">
           <Projects />
+        </section>
+
+        <section id="contact">
           <Contact />
-        </motion.div>
+        </section>
       </div>
+
+      <footer className="py-20 text-center border-t border-border">
+        <p className="text-muted text-sm font-bold tracking-[0.3em] uppercase">
+          &copy; {new Date().getFullYear()} Ebong Valentine &bull; Excellence Always
+        </p>
+      </footer>
     </div>
   );
 }

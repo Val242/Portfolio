@@ -39,14 +39,18 @@ function About() {
           viewport={{ once: true }}
           className="space-y-8 max-w-3xl mx-auto text-center"
         >
-          <div className="space-y-6 text-muted text-xl leading-relaxed">
+          <div className="space-y-6 text-muted text-xl leading-relaxed text-justify">
             <p>
               Hi, I’m <span className="font-bold text-foreground underline decoration-primary decoration-4 underline-offset-4">Valentine</span>,
-              a Fullstack Developer dedicated to crafting exceptional digital products.
+              a junior Full-Stack Software Engineer currently pursuing my B.ENG in Software Engineering (3rd Year).
             </p>
             <p>
-              I bridge the gap between complex backend logic and intuitive frontend design.
-              My approach is centered on efficiency, scalability, and user-centric results.
+              I have hands-on experience building web and mobile applications using React.js, React Native, and Next.js.
+              I enjoy creating clean, intuitive user interfaces and translating product ideas into functional applications.
+            </p>
+            <p>
+              On the backend, I work with Node.js, TypeScript, Express.js, Nest.js, Java, and Spring Boot to build RESTful APIs and support robust application logic.
+              I’m fluent in English and French and motivated to grow in fast-paced engineering teams.
             </p>
           </div>
 
@@ -63,31 +67,122 @@ function About() {
         </motion.div>
       </div>
 
+      {/* Resume Details: Experience & Education */}
+      <div className="max-w-5xl w-full mt-40 grid lg:grid-cols-2 gap-20">
+
+        {/* Work Experience */}
+        <div>
+          <h3 className="text-2xl font-black mb-12 text-center lg:text-left flex items-center justify-center lg:justify-start gap-4">
+            <span className="w-12 h-[2px] bg-primary hidden lg:block" />
+            Experience
+          </h3>
+          <div className="space-y-12">
+            {[
+              {
+                role: "Full-Stack Developer",
+                company: "Cameroon International Music Festival Hackathon",
+                period: "Hackathon Project",
+                desc: "Built KontriVibe, a platform promoting Cameroonian music. Implemented frontend components, supported backend API integration, and integrated AI-driven features.",
+              },
+              {
+                role: "Co-Trainer",
+                company: "React & React Native Dev Bootcamp",
+                period: "Cohort 5",
+                desc: "Trained 20+ participants in React/React Native, explaining core concepts (state, hooks) and supporting debugging during hands-on sessions.",
+              }
+            ].map((job, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="relative pl-8 border-l-2 border-border/50 group hover:border-primary transition-colors text-left"
+              >
+                <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-border group-hover:bg-primary transition-colors border-4 border-background" />
+                <h4 className="text-xl font-bold text-foreground mb-1">{job.role}</h4>
+                <div className="flex flex-col mb-4">
+                  <span className="text-primary font-bold uppercase text-[10px] tracking-widest">{job.company}</span>
+                  <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest mt-1">{job.period}</span>
+                </div>
+                <p className="text-muted text-sm leading-relaxed">{job.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Leadership & Education */}
+        <div className="space-y-20">
+          <div>
+            <h3 className="text-2xl font-black mb-12 text-center lg:text-left flex items-center justify-center lg:justify-start gap-4">
+              <span className="w-12 h-[2px] bg-primary hidden lg:block" />
+              Leadership
+            </h3>
+            <div className="space-y-12">
+              {[
+                {
+                  role: "Public Relations Officer",
+                  company: "GDGoC - Univ. of Buea",
+                  period: "Aug 2025 – Aug 2026",
+                  desc: "Coordinating communication, engaging sponsors, and building a strong student developer community.",
+                },
+                {
+                  role: "Core Team Member",
+                  company: "Hult Prize",
+                  period: "Dec 2025 – Feb 2026",
+                  desc: "Assisted in student orientation, awareness campaigns, and engagement in the Hult Prize program.",
+                }
+              ].map((role, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.2 }}
+                  className="relative pl-8 border-l-2 border-border/50 group hover:border-primary transition-colors text-left"
+                >
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-border group-hover:bg-primary transition-colors border-4 border-background" />
+                  <h4 className="text-xl font-bold text-foreground mb-1">{role.role}</h4>
+                  <div className="flex flex-col mb-4">
+                    <span className="text-primary font-bold uppercase text-[10px] tracking-widest">{role.company}</span>
+                    <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest mt-1">{role.period}</span>
+                  </div>
+                  <p className="text-muted text-sm leading-relaxed">{role.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
       {/* Full Width Marquee */}
       <div className="w-full mt-32 relative">
         <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-background to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-background to-transparent z-10" />
-        
-        <motion.div 
+
+        <motion.div
           className="flex gap-12 items-center"
-          animate={{ 
-            x: [0, -2000], 
+          animate={{
+            x: [0, -2000],
           }}
-          transition={{ 
-            duration: 40, 
-            repeat: Infinity, 
-            ease: "linear" 
+          transition={{
+            duration: 40,
+            repeat: Infinity,
+            ease: "linear"
           }}
         >
           {[...skills, ...skills, ...skills, ...skills].map(({ icon: Icon, name }, index) => (
             <div
               key={index}
-              className="flex items-center gap-4 group flex-shrink-0 bg-secondary/30 px-10 py-6 rounded-3xl border border-border/50 hover:border-primary transition-all shadow-sm"
+              className="flex items-center gap-3 group flex-shrink-0 bg-secondary/30 px-6 py-4 rounded-2xl border border-border/50 hover:border-primary transition-all shadow-sm"
             >
-              <div className="text-5xl text-primary group-hover:scale-110 transition-transform">
+              <div className="text-3xl text-primary group-hover:scale-110 transition-transform">
                 <Icon />
               </div>
-              <span className="text-xl font-black uppercase tracking-widest text-foreground/70">
+              <span className="text-sm font-bold uppercase tracking-widest text-foreground/70">
                 {name}
               </span>
             </div>
