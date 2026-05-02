@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLaptopCode, FaMobileAlt, FaServer } from "react-icons/fa";
+import { FaLaptopCode, FaMobileAlt, FaServer, FaDatabase } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 function Services() {
@@ -18,6 +18,11 @@ function Services() {
       icon: <FaServer />,
       title: "Backend Solutions",
       description: "Robust server logic using NestJS X Prisma, Node.js, and SpringBoot X Hibernate.",
+    },
+    {
+      icon: <FaDatabase />,
+      title: "Database Administration",
+      description: "Designing, securing, and optimizing database architecture for peak performance.",
     },
   ];
 
@@ -44,13 +49,16 @@ function Services() {
             viewport={{ once: true }}
             whileHover={{ y: -10 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group glass rounded-[2.5rem] p-10 flex flex-col items-start text-left hover:border-primary/50 transition-colors"
+            className="group relative overflow-hidden bg-gradient-to-br from-card/80 to-secondary/80 backdrop-blur-md border border-border rounded-[2.5rem] p-10 flex flex-col items-start text-left transition-all duration-500 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20"
           >
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-3xl mb-8 group-hover:bg-primary group-hover:text-primary-foreground transition-colors shadow-lg shadow-primary/5">
+            {/* Glow Orb */}
+            <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            
+            <div className="relative z-10 w-16 h-16 rounded-2xl bg-background border border-border text-primary flex items-center justify-center text-3xl mb-8 group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-500 shadow-xl shadow-black/5">
               {service.icon}
             </div>
-            <h2 className="text-2xl font-black mb-4">{service.title}</h2>
-            <p className="text-muted leading-relaxed font-medium">{service.description}</p>
+            <h2 className="relative z-10 text-2xl font-black mb-4">{service.title}</h2>
+            <p className="relative z-10 text-muted leading-relaxed font-medium">{service.description}</p>
           </motion.div>
         ))}
       </div>

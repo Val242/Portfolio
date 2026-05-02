@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router";
 import { motion } from "framer-motion";
 import pp from "./assets/pic.jpg";
 import About from "./About";
@@ -33,6 +32,7 @@ function App() {
 
       {/* Hero Section */}
       <motion.section
+        id="home"
         initial="hidden"
         animate="visible"
         className="relative min-h-screen flex flex-col lg:flex-row items-center justify-between px-8 lg:px-40 py-32"
@@ -59,12 +59,12 @@ function App() {
             variants={textEntry}
             className="pt-10 flex flex-wrap gap-6 justify-center lg:justify-start"
           >
-            <Link to="/projects" className="bg-primary text-primary-foreground px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:scale-105 transition-all shadow-2xl shadow-primary/30">
+            <a href="#projects" className="bg-primary text-primary-foreground px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:scale-105 transition-all shadow-2xl shadow-primary/30">
               Explore My Work
-            </Link>
-            <Link to="contact" className="bg-transparent text-foreground border-2 border-border px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:bg-foreground hover:text-background transition-all">
+            </a>
+            <a href="#contact" className="bg-transparent text-foreground border-2 border-border px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:bg-foreground hover:text-background transition-all">
               Get In Touch
-            </Link>
+            </a>
           </motion.div>
         </div>
 

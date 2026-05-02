@@ -46,13 +46,17 @@ function Contact() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="glass rounded-[2rem] p-8 flex flex-col items-center text-center group hover:border-primary/50 transition-all shadow-sm"
+            whileHover={{ y: -10 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="group relative overflow-hidden bg-gradient-to-br from-card/80 to-secondary/80 backdrop-blur-md border border-border rounded-[2.5rem] p-8 flex flex-col items-center text-center transition-all duration-500 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20"
           >
-            <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+            {/* Glow Orb */}
+            <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+            <div className="relative z-10 w-16 h-16 rounded-2xl bg-background border border-border text-primary flex items-center justify-center text-3xl mb-6 group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-500 shadow-xl shadow-black/5">
               {item.icon}
             </div>
-            <span className="text-lg font-bold text-foreground/80 break-all">{item.label}</span>
+            <span className="relative z-10 text-lg font-bold text-foreground/80 break-all">{item.label}</span>
           </motion.a>
         ))}
       </div>
