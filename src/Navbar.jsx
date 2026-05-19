@@ -115,7 +115,7 @@ function Navbar() {
 
             <div className="flex gap-8 text-2xl pt-8 border-t border-border w-full justify-center">
               <a href="https://x.com/EbongValentineX" target="_blank" rel="noopener noreferrer"><FaTwitter className="text-foreground/40 hover:text-primary transition-colors" /></a>
-              <a href="https://www.linkedin.com/in/ebong-valentine" target="_blank" rel="noopener noreferrer"><FaLinkedin className="text-foreground/40 hover:text-primary transition-colors" /></a>
+              <a href="https://www.linkedin.com/in/ebong-valentine-2b1157322" target="_blank" rel="noopener noreferrer"><FaLinkedin className="text-foreground/40 hover:text-primary transition-colors" /></a>
               <a href="https://github.com/Val242" target="_blank" rel="noopener noreferrer"><FaGithub className="text-foreground/40 hover:text-primary transition-colors" /></a>
             </div>
           </motion.div>
