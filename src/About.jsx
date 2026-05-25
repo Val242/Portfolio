@@ -42,7 +42,7 @@ function About() {
           <div className="space-y-6 text-muted text-xl leading-relaxed text-justify">
             <p>
               Hi, I’m <span className="font-bold text-foreground underline decoration-primary decoration-4 underline-offset-4">Valentine</span>,
-              a junior Full-Stack Software Engineer currently pursuing my B.ENG in Software Engineering (3rd Year).
+              a  Full-Stack Software Engineer currently pursuing my B.ENG in Software Engineering (3rd Year).
             </p>
             <p>
               I have hands-on experience building web and mobile applications using React.js, React Native, and Next.js.
