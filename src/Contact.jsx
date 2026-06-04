@@ -7,8 +7,8 @@ function Contact() {
   const contactItems = [
     {
       icon: <FaEnvelope />,
-      label: "akumengwene@gmail.com",
-      link: "mailto:akumengwene@gmail.com",
+      label: "ebongvalentine70@gmail.com",
+      link: "mailto:ebongvalentine70@gmail.com",
     },
     {
       icon: <FaPhone />,
