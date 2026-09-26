@@ -1,14 +1,38 @@
 import React from "react";
 import { motion } from "framer-motion";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaLinux,
+  FaAws,
+  FaLaravel,
+} from "react-icons/fa";
+import {
+  SiMongodb,
+  SiTailwindcss,
+  SiTypescript,
+  SiNestjs,
+  SiPostgresql,
+  SiSpringboot,
+  SiDocker,
+  SiKubernetes,
+  SiGitlab,
+  SiGithubactions,
+  SiJenkins,
+  SiTerraform,
+  SiAnsible,
+} from "react-icons/si";
+
 import About from "./About";
 import Services from "./Services";
 import Contact from "./Contact";
 import Navbar from "./Navbar";
 import Projects from "./Projects";
+import Skills from "./Skills";
 import useRoleSwitcher from "./hooks/useRoleSwitcher";
-
-import myLogo from "./assets/my_logo.png";
-import myLogoDark from "./assets/my_logo_dark.jpg";
 
 function App() {
   const role = useRoleSwitcher({
@@ -20,6 +44,36 @@ function App() {
       "FULL-STACK ENGINEER",
     ],
   });
+
+  const skills = [
+    // Backend
+    { icon: FaNodeJs, name: "Node.js" },
+    { icon: SiNestjs, name: "NestJS" },
+    { icon: SiSpringboot, name: "Spring Boot" },
+    { icon: FaLaravel, name: "Laravel" },
+
+    // Databases
+    { icon: SiPostgresql, name: "PostgreSQL" },
+    { icon: SiMongodb, name: "MongoDB" },
+
+    // DevOps
+    { icon: SiDocker, name: "Docker" },
+    // { icon: SiKubernetes, name: "Kubernetes" },
+    { icon: SiGitlab, name: "GitLab CI/CD" },
+    { icon: SiGithubactions, name: "GitHub Actions" },
+    { icon: SiJenkins, name: "Jenkins" },
+    { icon: SiTerraform, name: "Terraform" },
+    { icon: SiAnsible, name: "Ansible" },
+    { icon: FaLinux, name: "Linux" },
+
+    // Cloud
+    { icon: FaAws, name: "AWS" },
+
+    // Frontend
+    { icon: SiTypescript, name: "TypeScript" },
+    { icon: FaReact, name: "React" },
+    { icon: SiTailwindcss, name: "TailwindCSS" },
+  ];
 
   const textEntry = {
     hidden: { opacity: 0, y: 40 },
@@ -95,18 +149,11 @@ function App() {
                 Resume
               </a>
             </motion.div>
-
-            {/* Explore Work */}
-            {/* <motion.div variants={textEntry} className="mt-6">
-              <a
-                href="#projects"
-                className="text-muted hover:text-primary text-sm font-bold uppercase tracking-widest transition-colors duration-300"
-              >
-                Explore My Work ↓
-              </a>
-            </motion.div> */}
           </div>
         </div>
+
+        {/* Skills Marquee */}
+        <Skills skills={skills} />
       </motion.section>
 
       {/* Sections Wrapper */}
