@@ -39,16 +39,17 @@ function App() {
             </h1>
           </motion.div>
 
-          <motion.p
-            variants={textEntry}
-            className="text-muted text-xl lg:text-3xl font-medium max-w-3xl leading-tight"
-          >
-            I'm Valentine, a Fullstack Developer building digital solutions that
-            are{" "}
-            <span className="text-foreground">
-              bold, efficient, and user-centric.
-            </span>
-          </motion.p>
+<motion.p
+  variants={textEntry}
+  className="text-muted text-xl lg:text-3xl font-medium max-w-4xl leading-tight"
+>
+  I'm Valentine, a Full-Stack Software Engineer specializing in{" "}
+  <span className="text-foreground">
+    backend engineering, DevOps, and scalable systems
+  </span>
+  , with strong frontend experience building modern web and mobile
+  applications.
+</motion.p>
 
           <motion.div
             variants={textEntry}
