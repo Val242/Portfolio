@@ -5,7 +5,6 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiNestjs,
-  SiPrisma,
   SiPostgresql,
   SiSpringboot,
   SiHibernate,
@@ -27,6 +26,36 @@ function About() {
     { icon: SiTypescript, name: "TypeScript" },
   ];
 
+  const experience = [
+    {
+      role: "Senior Software Engineer",
+      company: "Relay — Intelligent Transition Platform",
+      period: "June 2026 – Present",
+      desc: "Lead backend engineering and system architecture for a transition intelligence platform serving service members and veterans. Design scalable system and REST API architectures using NestJS, Prisma, and PostgreSQL, covering transitions, phases, signals, checklist items, places, groups, and user state. Build data import pipelines for large Excel datasets while focusing on scalability, data integrity, authentication, and CI/CD.",
+    },
+    {
+      role: "Frontend Developer",
+      company: "MammyHealth — Pregnancy & Maternal Health Platform",
+      period: "May 2026 – Aug 2026",
+      desc: "Build a scalable cross-platform React Native application focused on pregnancy and maternal health guidance. Develop reusable UI components, structured health content systems, and guided onboarding flows while maintaining a modular frontend architecture for future guides, articles, and community features.",
+    },
+  ];
+
+  const leadership = [
+    {
+      role: "Public Relations Officer",
+      company: "GDGoC - Univ. of Buea",
+      period: "Aug 2025 – Aug 2026",
+      desc: "Coordinating communication, engaging sponsors, and building a strong student developer community.",
+    },
+    {
+      role: "Core Team Member",
+      company: "Hult Prize",
+      period: "Dec 2025 – Feb 2026",
+      desc: "Assisted in student orientation, awareness campaigns, and engagement in the Hult Prize program.",
+    },
+  ];
+
   return (
     <div className="bg-background flex flex-col items-center px-6 lg:px-40 py-24 overflow-hidden">
       {/* Heading */}
@@ -34,14 +63,13 @@ function About() {
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className=""
       >
         <h2 className="text-2xl font-bold text-primary uppercase tracking-[0.3em] mb-4">
           About Me
         </h2>
       </motion.div>
 
-      {/* Content */}
+      {/* About Content */}
       <div className="max-w-7xl w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -78,6 +106,7 @@ function About() {
             </p>
           </div>
 
+          {/* Experience Stat */}
           <div className="pt-8 flex justify-center border-t border-border">
             <div className="text-center">
               <h3 className="text-2xl font-black mb-2">3+</h3>
@@ -89,7 +118,7 @@ function About() {
         </motion.div>
       </div>
 
-      {/* Resume Details: Experience & Education */}
+      {/* Experience & Leadership */}
       <div className="max-w-5xl w-full mt-40 grid lg:grid-cols-2 gap-20">
         {/* Work Experience */}
         <div>
@@ -97,21 +126,9 @@ function About() {
             <span className="w-12 h-[2px] bg-primary hidden lg:block" />
             Experience
           </h3>
+
           <div className="space-y-12">
-            {[
-              {
-                role: "Full-Stack Developer",
-                company: "Cameroon International Music Festival Hackathon",
-                period: "Hackathon Project",
-                desc: "Built KontriVibe, a platform promoting Cameroonian music. Implemented frontend components, supported backend API integration, and integrated AI-driven features.",
-              },
-              {
-                role: "Co-Trainer",
-                company: "React & React Native Dev Bootcamp",
-                period: "Cohort 5",
-                desc: "Trained 20+ participants in React/React Native, explaining core concepts (state, hooks) and supporting debugging during hands-on sessions.",
-              },
-            ].map((job, i) => (
+            {experience.map((job, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
@@ -121,78 +138,73 @@ function About() {
                 className="relative pl-8 border-l-2 border-border/50 group hover:border-primary transition-colors text-left"
               >
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-border group-hover:bg-primary transition-colors border-4 border-background" />
+
                 <h4 className="text-xl font-bold text-foreground mb-1">
                   {job.role}
                 </h4>
+
                 <div className="flex flex-col mb-4">
                   <span className="text-primary font-bold uppercase text-[10px] tracking-widest">
                     {job.company}
                   </span>
+
                   <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest mt-1">
                     {job.period}
                   </span>
                 </div>
+
                 <p className="text-muted text-sm leading-relaxed">{job.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Leadership & Education */}
-        <div className="space-y-20">
-          <div>
-            <h3 className="text-2xl font-black mb-12 text-center lg:text-left flex items-center justify-center lg:justify-start gap-4">
-              <span className="w-12 h-[2px] bg-primary hidden lg:block" />
-              Leadership
-            </h3>
-            <div className="space-y-12">
-              {[
-                {
-                  role: "Public Relations Officer",
-                  company: "GDGoC - Univ. of Buea",
-                  period: "Aug 2025 – Aug 2026",
-                  desc: "Coordinating communication, engaging sponsors, and building a strong student developer community.",
-                },
-                {
-                  role: "Core Team Member",
-                  company: "Hult Prize",
-                  period: "Dec 2025 – Feb 2026",
-                  desc: "Assisted in student orientation, awareness campaigns, and engagement in the Hult Prize program.",
-                },
-              ].map((role, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.2 }}
-                  className="relative pl-8 border-l-2 border-border/50 group hover:border-primary transition-colors text-left"
-                >
-                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-border group-hover:bg-primary transition-colors border-4 border-background" />
-                  <h4 className="text-xl font-bold text-foreground mb-1">
-                    {role.role}
-                  </h4>
-                  <div className="flex flex-col mb-4">
-                    <span className="text-primary font-bold uppercase text-[10px] tracking-widest">
-                      {role.company}
-                    </span>
-                    <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest mt-1">
-                      {role.period}
-                    </span>
-                  </div>
-                  <p className="text-muted text-sm leading-relaxed">
-                    {role.desc}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+        {/* Leadership */}
+        <div>
+          <h3 className="text-2xl font-black mb-12 text-center lg:text-left flex items-center justify-center lg:justify-start gap-4">
+            <span className="w-12 h-[2px] bg-primary hidden lg:block" />
+            Leadership
+          </h3>
+
+          <div className="space-y-12">
+            {leadership.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="relative pl-8 border-l-2 border-border/50 group hover:border-primary transition-colors text-left"
+              >
+                <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-border group-hover:bg-primary transition-colors border-4 border-background" />
+
+                <h4 className="text-xl font-bold text-foreground mb-1">
+                  {item.role}
+                </h4>
+
+                <div className="flex flex-col mb-4">
+                  <span className="text-primary font-bold uppercase text-[10px] tracking-widest">
+                    {item.company}
+                  </span>
+
+                  <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest mt-1">
+                    {item.period}
+                  </span>
+                </div>
+
+                <p className="text-muted text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Full Width Marquee */}
+      {/* Skills Marquee */}
       <div className="w-full mt-32 relative">
         <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-background to-transparent z-10" />
+
         <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-background to-transparent z-10" />
 
         <motion.div
@@ -215,6 +227,7 @@ function About() {
                 <div className="text-3xl text-primary group-hover:scale-110 transition-transform">
                   <Icon />
                 </div>
+
                 <span className="text-sm font-bold uppercase tracking-widest text-foreground/70">
                   {name}
                 </span>
