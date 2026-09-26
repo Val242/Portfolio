@@ -29,7 +29,7 @@ function App() {
     roles: [
       "SOFTWARE ENGINEER",
       "DEVOPS ENGINEER",
-      "CLOUD ENGINEER",
+      // "CLOUD ENGINEER",
       "BACKEND ENGINEER",
       "FULL-STACK ENGINEER",
     ],
