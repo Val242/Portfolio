@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaLinux, FaAws, FaLaravel } from "react-icons/fa";
 import {
@@ -34,6 +34,27 @@ function App() {
       "FULL-STACK ENGINEER",
     ],
   });
+
+  const [typedName, setTypedName] = useState("");
+  const [nameComplete, setNameComplete] = useState(false);
+
+  const fullName = "Hi — I'm Ebong Valentine";
+
+  useEffect(() => {
+    let index = 0;
+
+    const typingInterval = setInterval(() => {
+      index += 1;
+      setTypedName(fullName.slice(0, index));
+
+      if (index === fullName.length) {
+        clearInterval(typingInterval);
+        setNameComplete(true);
+      }
+    }, 75);
+
+    return () => clearInterval(typingInterval);
+  }, []);
 
   const skills = [
     // Backend
@@ -89,13 +110,26 @@ function App() {
           <div className="flex min-h-48 flex-col justify-center lg:min-h-56 lg:max-w-[38rem]">
             <motion.div variants={textEntry}>
               <h1>
-                <span className="text-foreground mb-2 block text-3xl font-bold lg:text-4xl">
-                  Hi — I'm Valentine
+                {/* Typewriter Name */}
+                <span className="text-foreground mb-2 block min-h-[2.5rem] text-3xl font-bold lg:min-h-[3rem] lg:text-4xl">
+                  {typedName}
+
+                  {!nameComplete && (
+                    <span className="ml-1 inline-block animate-pulse">|</span>
+                  )}
                 </span>
 
-                <span className="text-primary block text-[1.75rem] font-bold lg:text-3xl">
-                  {role}
-                </span>
+                {/* Role appears after name finishes */}
+                {nameComplete && (
+                  <motion.span
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="text-primary block text-[1.75rem] font-bold lg:text-3xl"
+                  >
+                    {role}
+                  </motion.span>
+                )}
               </h1>
 
               <p className="text-muted mt-4 text-lg leading-relaxed lg:text-xl">
@@ -133,7 +167,7 @@ function App() {
                 href="https://x.com/tinoscript"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="View LinkedIn Profile"
+                aria-label="View X Profile"
                 className="text-primary bg-transparent border border-primary hover:bg-primary hover:text-primary-foreground rounded-lg px-6 py-2.5 text-sm font-bold transition-all duration-300"
               >
                 X
@@ -143,7 +177,7 @@ function App() {
                 href="https://github.com/Val242"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="View LinkedIn Profile"
+                aria-label="View GitHub Profile"
                 className="text-primary bg-transparent border border-primary hover:bg-primary hover:text-primary-foreground rounded-lg px-6 py-2.5 text-sm font-bold transition-all duration-300"
               >
                 Github
