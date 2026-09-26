@@ -72,7 +72,7 @@ function App() {
             className="pt-4 flex flex-wrap gap-4 justify-center lg:justify-start"
           >
             <a
-              href="mailto:your-email@example.com"
+              href="mailto:ebongvalentine70@gmail.com"
               aria-label="Contact Valentine by email"
               className="border border-primary bg-primary text-primary-foreground hover:opacity-90 rounded-lg px-7 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300"
             >

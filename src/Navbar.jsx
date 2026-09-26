@@ -11,6 +11,9 @@ import {
 import { useTheme } from "./ThemeContext";
 import { motion, AnimatePresence } from "framer-motion";
 
+import myLogo from "./assets/my_logo.png";
+import myLogoDark from "./assets/my_logo_dark.jpg";
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
@@ -36,6 +39,7 @@ function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -47,17 +51,25 @@ function Navbar() {
     { name: "Contact", to: "#contact" },
   ];
 
+  // Light mode → dark logo
+  // Dark mode → light logo
+  const currentLogo = theme === "light" ? myLogo : myLogoDark;
+
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
       <nav className="w-full max-w-5xl glass rounded-full px-6 py-2 flex items-center justify-between border border-white/10">
         {/* Logo */}
-        <a href="#home">
+        <a href="#home" aria-label="Go to homepage">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-black tracking-tighter text-primary"
+            className="w-10 h-10 rounded-full overflow-hidden border border-border"
           >
-            ENVA
+            <img
+              src={currentLogo}
+              alt="Ebong Valentine"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
         </a>
 
@@ -68,7 +80,11 @@ function Navbar() {
               key={link.name}
               href={link.to}
               onClick={() => setActiveLink(link.to)}
-              className={`text-[11px] font-black uppercase tracking-[0.3em] transition-colors ${activeLink === link.to ? "text-primary" : "text-foreground/70 hover:text-primary"}`}
+              className={`text-[11px] font-black uppercase tracking-[0.3em] transition-colors ${
+                activeLink === link.to
+                  ? "text-primary"
+                  : "text-foreground/70 hover:text-primary"
+              }`}
             >
               {link.name}
             </a>
@@ -76,8 +92,10 @@ function Navbar() {
 
           <div className="h-6 w-[1px] bg-border mx-2" />
 
+          {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
+            aria-label="Toggle theme"
             className="w-10 h-10 rounded-full flex items-center justify-center bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-all border border-border"
           >
             {theme === "light" ? <FaMoon /> : <FaSun />}
@@ -86,18 +104,23 @@ function Navbar() {
 
         {/* Mobile Toggle */}
         <div className="md:hidden flex items-center gap-4">
+          {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
+            aria-label="Toggle theme"
             className="w-10 h-10 rounded-full flex items-center justify-center bg-secondary/50 border border-border"
           >
             {theme === "light" ? <FaMoon /> : <FaSun />}
           </button>
-          <div
+
+          {/* Menu Toggle */}
+          <button
             className="text-2xl text-foreground"
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation menu"
           >
             {menuOpen ? <FaTimes /> : <FaBars />}
-          </div>
+          </button>
         </div>
       </nav>
 
@@ -118,31 +141,41 @@ function Navbar() {
                   setActiveLink(link.to);
                   setMenuOpen(false);
                 }}
-                className={`text-2xl font-black uppercase tracking-widest transition-colors ${activeLink === link.to ? "text-primary" : "text-foreground/70 hover:text-primary"}`}
+                className={`text-2xl font-black uppercase tracking-widest transition-colors ${
+                  activeLink === link.to
+                    ? "text-primary"
+                    : "text-foreground/70 hover:text-primary"
+                }`}
               >
                 {link.name}
               </a>
             ))}
 
+            {/* Social Links */}
             <div className="flex gap-8 text-2xl pt-8 border-t border-border w-full justify-center">
               <a
                 href="https://x.com/EbongValentineX"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="X / Twitter"
               >
                 <FaTwitter className="text-foreground/40 hover:text-primary transition-colors" />
               </a>
+
               <a
                 href="https://www.linkedin.com/in/ebong-valentine-2b1157322"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
                 <FaLinkedin className="text-foreground/40 hover:text-primary transition-colors" />
               </a>
+
               <a
                 href="https://github.com/Val242"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
               >
                 <FaGithub className="text-foreground/40 hover:text-primary transition-colors" />
               </a>
