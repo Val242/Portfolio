@@ -1,15 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaNodeJs,
-  FaLinux,
-  FaAws,
-  FaLaravel,
-} from "react-icons/fa";
+import { FaReact, FaNodeJs, FaLinux, FaAws, FaLaravel } from "react-icons/fa";
 import {
   SiMongodb,
   SiTailwindcss,
@@ -18,7 +9,6 @@ import {
   SiPostgresql,
   SiSpringboot,
   SiDocker,
-  SiKubernetes,
   SiGitlab,
   SiGithubactions,
   SiJenkins,
@@ -58,7 +48,6 @@ function App() {
 
     // DevOps
     { icon: SiDocker, name: "Docker" },
-    // { icon: SiKubernetes, name: "Kubernetes" },
     { icon: SiGitlab, name: "GitLab CI/CD" },
     { icon: SiGithubactions, name: "GitHub Actions" },
     { icon: SiJenkins, name: "Jenkins" },
@@ -141,12 +130,43 @@ function App() {
               </a>
 
               <a
+                href="https://x.com/tinoscript"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View LinkedIn Profile"
+                className="text-primary bg-transparent border border-primary hover:bg-primary hover:text-primary-foreground rounded-lg px-6 py-2.5 text-sm font-bold transition-all duration-300"
+              >
+                X
+              </a>
+
+              <a
+                href="https://github.com/Val242"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View LinkedIn Profile"
+                className="text-primary bg-transparent border border-primary hover:bg-primary hover:text-primary-foreground rounded-lg px-6 py-2.5 text-sm font-bold transition-all duration-300"
+              >
+                Github
+              </a>
+
+              <a
                 href="/EBONG_VALENTINE_CV.pdf"
                 download="EBONG_VALENTINE_CV.pdf"
                 aria-label="Download Resume"
-                className="bg-transparent text-primary border border-primary hover:bg-primary hover:text-primary-foreground rounded-lg px-6 py-2.5 text-sm font-bold transition-all duration-300"
+                className="bg-transparent text-primary border border-primary hover:bg-primary hover:text-primary-foreground rounded-lg px-6 py-2.5 text-center text-sm font-bold transition-all duration-300"
               >
                 Resume
+              </a>
+            </motion.div>
+
+            {/* Explore My Work */}
+            <motion.div variants={textEntry} className="mt-7">
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 text-muted hover:text-primary text-sm font-bold uppercase tracking-widest transition-colors duration-300"
+              >
+                Explore My Work
+                <span className="text-lg animate-bounce">↓</span>
               </a>
             </motion.div>
           </div>
@@ -162,26 +182,18 @@ function App() {
           <About />
         </section>
 
-        <section id="services">
+        {/* <section id="services">
           <Services />
-        </section>
+        </section> */}
 
         <section id="projects">
           <Projects />
         </section>
 
-        <section id="contact">
+        {/* <section id="contact">
           <Contact />
-        </section>
+        </section> */}
       </div>
-
-      {/* Footer */}
-      <footer className="py-20 text-center border-t border-border">
-        <p className="text-muted text-sm font-bold tracking-[0.3em] uppercase">
-          &copy; {new Date().getFullYear()} Ebong Valentine &bull; Excellence
-          Always
-        </p>
-      </footer>
     </div>
   );
 }

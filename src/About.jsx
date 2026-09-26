@@ -208,40 +208,6 @@ function About() {
       </div>
 
       {/* Skills Marquee */}
-      <div className="w-full mt-32 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-background to-transparent z-10" />
-
-        <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-background to-transparent z-10" />
-
-        <motion.div
-          className="flex gap-12 items-center"
-          animate={{
-            x: [0, -2000],
-          }}
-          transition={{
-            duration: 40,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        >
-          {[...skills, ...skills, ...skills, ...skills].map(
-            ({ icon: Icon, name }, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-3 group flex-shrink-0 bg-secondary/30 px-6 py-4 rounded-2xl border border-border/50 hover:border-primary transition-all shadow-sm"
-              >
-                <div className="text-3xl text-primary group-hover:scale-110 transition-transform">
-                  <Icon />
-                </div>
-
-                <span className="text-sm font-bold uppercase tracking-widest text-foreground/70">
-                  {name}
-                </span>
-              </div>
-            ),
-          )}
-        </motion.div>
-      </div>
     </div>
   );
 }
