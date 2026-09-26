@@ -28,7 +28,7 @@ function About() {
 
   const experience = [
     {
-      role: "Senior Software Engineer",
+      role: "Lead Software Engineer",
       company: "Relay — Intelligent Transition Platform",
       period: "June 2026 – Present",
       desc: "Lead backend engineering and system architecture for a transition intelligence platform serving service members and veterans. Design scalable system and REST API architectures using NestJS, Prisma, and PostgreSQL, covering transitions, phases, signals, checklist items, places, groups, and user state. Build data import pipelines for large Excel datasets while focusing on scalability, data integrity, authentication, and CI/CD.",
