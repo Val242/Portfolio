@@ -1,7 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { FaTwitter, FaLinkedin, FaGithub, FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
-import { useTheme } from './ThemeContext';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import {
+  FaTwitter,
+  FaLinkedin,
+  FaGithub,
+  FaBars,
+  FaTimes,
+  FaSun,
+  FaMoon,
+} from "react-icons/fa";
+import { useTheme } from "./ThemeContext";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,7 +22,7 @@ function Navbar() {
       const sections = document.querySelectorAll("section[id]");
       const scrollY = window.pageYOffset;
 
-      sections.forEach(current => {
+      sections.forEach((current) => {
         const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 100;
         const sectionId = current.getAttribute("id");
@@ -84,7 +92,10 @@ function Navbar() {
           >
             {theme === "light" ? <FaMoon /> : <FaSun />}
           </button>
-          <div className="text-2xl text-foreground" onClick={() => setMenuOpen(!menuOpen)}>
+          <div
+            className="text-2xl text-foreground"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
             {menuOpen ? <FaTimes /> : <FaBars />}
           </div>
         </div>
@@ -114,9 +125,27 @@ function Navbar() {
             ))}
 
             <div className="flex gap-8 text-2xl pt-8 border-t border-border w-full justify-center">
-              <a href="https://x.com/EbongValentineX" target="_blank" rel="noopener noreferrer"><FaTwitter className="text-foreground/40 hover:text-primary transition-colors" /></a>
-              <a href="https://www.linkedin.com/in/ebong-valentine-2b1157322" target="_blank" rel="noopener noreferrer"><FaLinkedin className="text-foreground/40 hover:text-primary transition-colors" /></a>
-              <a href="https://github.com/Val242" target="_blank" rel="noopener noreferrer"><FaGithub className="text-foreground/40 hover:text-primary transition-colors" /></a>
+              <a
+                href="https://x.com/EbongValentineX"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTwitter className="text-foreground/40 hover:text-primary transition-colors" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ebong-valentine-2b1157322"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="text-foreground/40 hover:text-primary transition-colors" />
+              </a>
+              <a
+                href="https://github.com/Val242"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="text-foreground/40 hover:text-primary transition-colors" />
+              </a>
             </div>
           </motion.div>
         )}

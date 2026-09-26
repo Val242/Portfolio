@@ -1,7 +1,13 @@
 import React from "react";
-import { FaTwitter, FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaTwitter,
+  FaLinkedin,
+  FaGithub,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
-
 
 function Contact() {
   const contactItems = [
@@ -31,8 +37,12 @@ function Contact() {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">Contact</h2>
-        <h1 className="text-4xl lg:text-5xl font-black">Let's <span className="text-primary italic">connect</span>.</h1>
+        <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">
+          Contact
+        </h2>
+        <h1 className="text-4xl lg:text-5xl font-black">
+          Let's <span className="text-primary italic">connect</span>.
+        </h1>
       </motion.div>
 
       {/* Contact Grid */}
@@ -56,7 +66,9 @@ function Contact() {
             <div className="relative z-10 w-16 h-16 rounded-2xl bg-background border border-border text-primary flex items-center justify-center text-3xl mb-6 group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-500 shadow-xl shadow-black/5">
               {item.icon}
             </div>
-            <span className="relative z-10 text-lg font-bold text-foreground/80 break-all">{item.label}</span>
+            <span className="relative z-10 text-lg font-bold text-foreground/80 break-all">
+              {item.label}
+            </span>
           </motion.a>
         ))}
       </div>
@@ -69,11 +81,32 @@ function Contact() {
         className="text-center space-y-10"
       >
         <div className="flex gap-10 justify-center text-3xl text-muted">
-          <a href="https://x.com/EbongValentineX" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:scale-110 transform"><FaTwitter /></a>
-          <a href="https://linkedin.com/in/ebong-valentine" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:scale-110 transform"><FaLinkedin /></a>
-          <a href="https://github.com/Val242" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:scale-110 transform"><FaGithub /></a>
+          <a
+            href="https://x.com/EbongValentineX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors hover:scale-110 transform"
+          >
+            <FaTwitter />
+          </a>
+          <a
+            href="https://linkedin.com/in/ebong-valentine"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors hover:scale-110 transform"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://github.com/Val242"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors hover:scale-110 transform"
+          >
+            <FaGithub />
+          </a>
         </div>
-        
+
         <a
           href="EBONG_VALENTINE_CV.pdf"
           download

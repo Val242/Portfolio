@@ -1,6 +1,15 @@
 import React from "react";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
-import { SiMongodb, SiTailwindcss, SiTypescript, SiNestjs, SiPrisma, SiPostgresql, SiSpringboot, SiHibernate } from "react-icons/si";
+import {
+  SiMongodb,
+  SiTailwindcss,
+  SiTypescript,
+  SiNestjs,
+  SiPrisma,
+  SiPostgresql,
+  SiSpringboot,
+  SiHibernate,
+} from "react-icons/si";
 import { motion } from "framer-motion";
 
 function About() {
@@ -27,8 +36,12 @@ function About() {
         viewport={{ once: true }}
         className="text-center mb-20"
       >
-        <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">About Me</h2>
-        <h1 className="text-4xl lg:text-6xl font-black">Building with <span className="text-primary italic">purpose</span>.</h1>
+        <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">
+          About Me
+        </h2>
+        <h1 className="text-4xl lg:text-6xl font-black">
+          Building with <span className="text-primary italic">purpose</span>.
+        </h1>
       </motion.div>
 
       {/* Content */}
@@ -41,27 +54,39 @@ function About() {
         >
           <div className="space-y-6 text-muted text-xl leading-relaxed text-justify">
             <p>
-              Hi, I’m <span className="font-bold text-foreground underline decoration-primary decoration-4 underline-offset-4">Valentine</span>,
-              a  Full-Stack Software Engineer currently pursuing my B.ENG in Software Engineering (3rd Year).
+              Hi, I’m{" "}
+              <span className="font-bold text-foreground underline decoration-primary decoration-4 underline-offset-4">
+                Valentine
+              </span>
+              , a Full-Stack Software Engineer with a strong focus on backend
+              engineering, DevOps, and building reliable, scalable systems.
             </p>
+
             <p>
-              I have hands-on experience building web and mobile applications using React.js, React Native, and Next.js.
-              I enjoy creating clean, intuitive user interfaces and translating product ideas into functional applications.
+              I specialize in backend development and API architecture using
+              TypeScript, NestJS, Java, and Spring Boot, with hands-on
+              experience designing production-ready services, databases, and
+              distributed system components. I also work extensively with DevOps
+              and cloud infrastructure, using Docker, CI/CD, AWS, Terraform, and
+              Linux to automate, deploy, and operate applications reliably.
             </p>
+
             <p>
-              On the backend, I work with Node.js, TypeScript, Express.js, Nest.js, Java, and Spring Boot to build RESTful APIs and support robust application logic.
-              I’m fluent in English and French and motivated to grow in fast-paced engineering teams.
+              Alongside my backend and infrastructure expertise, I have strong
+              frontend experience building modern web and mobile interfaces with
+              React, Next.js, and React Native. I enjoy working across the stack
+              while paying particular attention to system architecture,
+              scalability, automation, and delivering software that is built to
+              run reliably in production.
             </p>
           </div>
 
-          <div className="pt-8 grid grid-cols-2 gap-8 border-t border-border">
-            <div>
+          <div className="pt-8 flex justify-center border-t border-border">
+            <div className="text-center">
               <h3 className="text-2xl font-black mb-2">3+</h3>
-              <p className="text-muted text-sm uppercase font-bold tracking-widest">Years Experience</p>
-            </div>
-            <div>
-              <h3 className="text-2xl font-black mb-2">20+</h3>
-              <p className="text-muted text-sm uppercase font-bold tracking-widest">Projects Done</p>
+              <p className="text-muted text-sm uppercase font-bold tracking-widest">
+                Years Experience
+              </p>
             </div>
           </div>
         </motion.div>
@@ -69,7 +94,6 @@ function About() {
 
       {/* Resume Details: Experience & Education */}
       <div className="max-w-5xl w-full mt-40 grid lg:grid-cols-2 gap-20">
-
         {/* Work Experience */}
         <div>
           <h3 className="text-2xl font-black mb-12 text-center lg:text-left flex items-center justify-center lg:justify-start gap-4">
@@ -89,7 +113,7 @@ function About() {
                 company: "React & React Native Dev Bootcamp",
                 period: "Cohort 5",
                 desc: "Trained 20+ participants in React/React Native, explaining core concepts (state, hooks) and supporting debugging during hands-on sessions.",
-              }
+              },
             ].map((job, i) => (
               <motion.div
                 key={i}
@@ -100,10 +124,16 @@ function About() {
                 className="relative pl-8 border-l-2 border-border/50 group hover:border-primary transition-colors text-left"
               >
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-border group-hover:bg-primary transition-colors border-4 border-background" />
-                <h4 className="text-xl font-bold text-foreground mb-1">{job.role}</h4>
+                <h4 className="text-xl font-bold text-foreground mb-1">
+                  {job.role}
+                </h4>
                 <div className="flex flex-col mb-4">
-                  <span className="text-primary font-bold uppercase text-[10px] tracking-widest">{job.company}</span>
-                  <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest mt-1">{job.period}</span>
+                  <span className="text-primary font-bold uppercase text-[10px] tracking-widest">
+                    {job.company}
+                  </span>
+                  <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest mt-1">
+                    {job.period}
+                  </span>
                 </div>
                 <p className="text-muted text-sm leading-relaxed">{job.desc}</p>
               </motion.div>
@@ -131,7 +161,7 @@ function About() {
                   company: "Hult Prize",
                   period: "Dec 2025 – Feb 2026",
                   desc: "Assisted in student orientation, awareness campaigns, and engagement in the Hult Prize program.",
-                }
+                },
               ].map((role, i) => (
                 <motion.div
                   key={i}
@@ -142,20 +172,25 @@ function About() {
                   className="relative pl-8 border-l-2 border-border/50 group hover:border-primary transition-colors text-left"
                 >
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-border group-hover:bg-primary transition-colors border-4 border-background" />
-                  <h4 className="text-xl font-bold text-foreground mb-1">{role.role}</h4>
+                  <h4 className="text-xl font-bold text-foreground mb-1">
+                    {role.role}
+                  </h4>
                   <div className="flex flex-col mb-4">
-                    <span className="text-primary font-bold uppercase text-[10px] tracking-widest">{role.company}</span>
-                    <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest mt-1">{role.period}</span>
+                    <span className="text-primary font-bold uppercase text-[10px] tracking-widest">
+                      {role.company}
+                    </span>
+                    <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest mt-1">
+                      {role.period}
+                    </span>
                   </div>
-                  <p className="text-muted text-sm leading-relaxed">{role.desc}</p>
+                  <p className="text-muted text-sm leading-relaxed">
+                    {role.desc}
+                  </p>
                 </motion.div>
               ))}
             </div>
           </div>
-
-
         </div>
-
       </div>
 
       {/* Full Width Marquee */}
@@ -171,22 +206,24 @@ function About() {
           transition={{
             duration: 40,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
         >
-          {[...skills, ...skills, ...skills, ...skills].map(({ icon: Icon, name }, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-3 group flex-shrink-0 bg-secondary/30 px-6 py-4 rounded-2xl border border-border/50 hover:border-primary transition-all shadow-sm"
-            >
-              <div className="text-3xl text-primary group-hover:scale-110 transition-transform">
-                <Icon />
+          {[...skills, ...skills, ...skills, ...skills].map(
+            ({ icon: Icon, name }, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-3 group flex-shrink-0 bg-secondary/30 px-6 py-4 rounded-2xl border border-border/50 hover:border-primary transition-all shadow-sm"
+              >
+                <div className="text-3xl text-primary group-hover:scale-110 transition-transform">
+                  <Icon />
+                </div>
+                <span className="text-sm font-bold uppercase tracking-widest text-foreground/70">
+                  {name}
+                </span>
               </div>
-              <span className="text-sm font-bold uppercase tracking-widest text-foreground/70">
-                {name}
-              </span>
-            </div>
-          ))}
+            ),
+          )}
         </motion.div>
       </div>
     </div>

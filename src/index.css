@@ -4,11 +4,11 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   :root {
     --background: #ffffff;
     --foreground: #000000;
-    --primary: #d97706; /* Vibrant Amber */
+    --primary: #d97706;
     --primary-foreground: #ffffff;
     --secondary: #f4f4f5;
     --secondary-foreground: #18181b;
@@ -23,9 +23,9 @@
   }
 
   .dark {
-    --background: #000000; /* Pure Black */
+    --background: #000000;
     --foreground: #ffffff;
-    --primary: #d97706; /* Vibrant Amber */
+    --primary: #d97706;
     --primary-foreground: #000000;
     --secondary: #18181b;
     --secondary-foreground: #f4f4f5;
@@ -42,8 +42,10 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+    font-family: "Fira Code", monospace;
   }
 }
 
@@ -51,7 +53,7 @@
   .glass {
     @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-white/20 dark:border-slate-800/20 shadow-xl;
   }
-  
+
   .card-gradient {
     background: linear-gradient(135deg, var(--card) 0%, var(--secondary) 100%);
   }
