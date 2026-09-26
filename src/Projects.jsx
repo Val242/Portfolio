@@ -10,7 +10,6 @@ const projects = [
       "A cross-platform point-of-sale mobile application for managing sales, products, inventory, and business operations.",
     image: TCPoS,
     live: "https://play.google.com/store/apps/details?id=com.techchantier.tcpos&hl=en",
-    tech: ["React Native", "Expo", "TypeScript", "i18n"],
   },
   {
     title: "MammyHealth",
@@ -18,7 +17,6 @@ const projects = [
       "A cross-platform maternal health application providing personalized pregnancy guidance, health information, and structured educational content.",
     image: MammyHealth,
     live: "https://play.google.com/store/apps/details?id=app.mammy.health&hl=en",
-    tech: ["React Native", "Expo", "TypeScript", "NativeWind"],
   },
 ];
 
@@ -36,7 +34,7 @@ function Projects() {
         className="mb-7"
       >
         <h1 className="text-4xl font-black lg:text-7xl">
-          Featured <span className="text-primary ">Works</span>.
+          Featured <span className="text-primary">Works</span>.
         </h1>
       </motion.div>
 
@@ -70,18 +68,6 @@ function Projects() {
 
               {/* Info */}
               <div className="flex flex-grow flex-col px-2">
-                {/* Technologies */}
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="rounded-full border border-border px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-muted"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
                 <h2 className="mb-3 text-3xl font-black tracking-tight transition-colors group-hover:text-primary">
                   {project.title}
                 </h2>
