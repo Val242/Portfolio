@@ -7,6 +7,9 @@ import Navbar from "./Navbar";
 import Projects from "./Projects";
 import useRoleSwitcher from "./hooks/useRoleSwitcher";
 
+import myLogo from "./assets/my_logo.png";
+import myLogoDark from "./assets/my_logo_dark.jpg";
+
 function App() {
   const role = useRoleSwitcher({
     roles: [
@@ -36,81 +39,73 @@ function App() {
         id="home"
         initial="hidden"
         animate="visible"
-        className="relative min-h-screen flex items-center px-8 lg:px-40 py-32"
+        className="min-h-[calc(100vh-4rem)] bg-background"
       >
-        <div className="space-y-10 text-center lg:text-left z-10 max-w-5xl">
-          <motion.div variants={textEntry} className="space-y-4">
-            <p className="text-primary font-black uppercase tracking-[0.4em] text-xs">
-              Based in Cameroon
-            </p>
+        <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-8 px-6 pt-24 pb-12 md:grid-cols-2 lg:px-8 lg:py-16">
+          {/* Hero Content */}
+          <div className="flex min-h-48 flex-col justify-center lg:min-h-56 lg:max-w-[38rem]">
+            <motion.div variants={textEntry}>
+              <h1>
+                <span className="text-foreground mb-2 block text-3xl font-bold lg:text-4xl">
+                  Hi — I'm Valentine
+                </span>
 
-            <h1 className="text-6xl lg:text-[10rem] font-black leading-[0.85] tracking-tighter">
-              BEYOND <br />
-              <span className="text-primary italic">PIXELS</span>.
-            </h1>
+                <span className="text-primary block text-[1.75rem] font-bold lg:text-3xl">
+                  {role}
+                </span>
+              </h1>
 
-            <span className="text-accent block text-[1.75rem] font-bold">
-              {role}
-            </span>
-          </motion.div>
+              <p className="text-muted mt-4 text-lg leading-relaxed lg:text-xl">
+                I build reliable backend systems, automate infrastructure, and
+                design scalable applications. I specialize in backend
+                engineering, DevOps, cloud infrastructure, and full-stack
+                development.
+              </p>
+            </motion.div>
 
-          <motion.p
-            variants={textEntry}
-            className="text-muted text-xl lg:text-3xl font-medium max-w-4xl leading-tight"
-          >
-            I'm Valentine, a Full-Stack Software Engineer specializing in{" "}
-            <span className="text-foreground">
-              backend engineering, DevOps, and scalable systems
-            </span>
-            , with strong frontend experience building modern web and mobile
-            applications.
-          </motion.p>
-
-          {/* Direct Contact Actions */}
-          <motion.div
-            variants={textEntry}
-            className="pt-4 flex flex-wrap gap-4 justify-center lg:justify-start"
-          >
-            <a
-              href="mailto:ebongvalentine70@gmail.com"
-              aria-label="Contact Valentine by email"
-              className="border border-primary bg-primary text-primary-foreground hover:opacity-90 rounded-lg px-7 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300"
+            {/* Actions */}
+            <motion.div
+              variants={textEntry}
+              className="mt-8 flex flex-wrap gap-3"
             >
-              Contact Me
-            </a>
+              <a
+                href="mailto:ebongvalentine70@gmail.com"
+                aria-label="Contact Valentine by email"
+                className="bg-primary text-primary-foreground border border-primary hover:opacity-90 rounded-lg px-6 py-2.5 text-center text-sm font-bold transition-all duration-300"
+              >
+                Contact Me
+              </a>
 
-            <a
-              href="https://www.linkedin.com/in/ebong-valentine-2b1157322/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View LinkedIn Profile"
-              className="border border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg px-7 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300"
-            >
-              LinkedIn
-            </a>
+              <a
+                href="https://www.linkedin.com/in/ebong-valentine-2b1157322/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View LinkedIn Profile"
+                className="text-primary bg-transparent border border-primary hover:bg-primary hover:text-primary-foreground rounded-lg px-6 py-2.5 text-sm font-bold transition-all duration-300"
+              >
+                LinkedIn
+              </a>
 
-            <a
-              href="EBONG_VALENTINE_CV.pdf"
-              download
-              aria-label="Download Resume"
-              className="border border-border text-foreground hover:bg-foreground hover:text-background rounded-lg px-7 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300"
-            >
-              Resume
-            </a>
-          </motion.div>
+              <a
+                href="/EBONG_VALENTINE_CV.pdf"
+                download="EBONG_VALENTINE_CV.pdf"
+                aria-label="Download Resume"
+                className="bg-transparent text-primary border border-primary hover:bg-primary hover:text-primary-foreground rounded-lg px-6 py-2.5 text-sm font-bold transition-all duration-300"
+              >
+                Resume
+              </a>
+            </motion.div>
 
-          {/* Explore Work */}
-          <motion.div
-            variants={textEntry}
-            className="flex justify-center lg:justify-start"
-          >
-            <a
-              href="#projects"
-              className="text-muted hover:text-primary text-sm font-bold uppercase tracking-widest transition-colors duration-300"
-            >
-              Explore My Work ↓
-            </a>
-          </motion.div>
+            {/* Explore Work */}
+            {/* <motion.div variants={textEntry} className="mt-6">
+              <a
+                href="#projects"
+                className="text-muted hover:text-primary text-sm font-bold uppercase tracking-widest transition-colors duration-300"
+              >
+                Explore My Work ↓
+              </a>
+            </motion.div> */}
+          </div>
         </div>
       </motion.section>
 
@@ -133,6 +128,7 @@ function App() {
         </section>
       </div>
 
+      {/* Footer */}
       <footer className="py-20 text-center border-t border-border">
         <p className="text-muted text-sm font-bold tracking-[0.3em] uppercase">
           &copy; {new Date().getFullYear()} Ebong Valentine &bull; Excellence

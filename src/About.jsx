@@ -34,14 +34,11 @@ function About() {
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="text-center mb-20"
+        className=""
       >
-        <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">
+        <h2 className="text-2xl font-bold text-primary uppercase tracking-[0.3em] mb-4">
           About Me
         </h2>
-        <h1 className="text-4xl lg:text-6xl font-black">
-          Building with <span className="text-primary italic">purpose</span>.
-        </h1>
       </motion.div>
 
       {/* Content */}
