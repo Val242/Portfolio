@@ -10,10 +10,10 @@ import useRoleSwitcher from "./hooks/useRoleSwitcher";
 function App() {
   const role = useRoleSwitcher({
     roles: [
-      "BACKEND ENGINEER",
+      "SOFTWARE ENGINEER",
       "DEVOPS ENGINEER",
       "CLOUD ENGINEER",
-      "SOFTWARE ENGINEER",
+      "BACKEND ENGINEER",
       "FULL-STACK ENGINEER",
     ],
   });
