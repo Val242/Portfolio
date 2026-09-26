@@ -1,8 +1,8 @@
 import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
-import TCPoS from "./assets/TCPoS.png";
-import MammyHealth from "./assets/MammyHealth.png";
+import TCPoS from "./assets/tcpos.png";
+import MammyHealth from "./assets/mammyHealth.png";
 
 const projects = [
   {
