@@ -1,96 +1,204 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="https://www.flaticon.com/free-icons/api" />
-  <!-- <a href="https://www.flaticon.com/free-icons/api" title="api icons">Api icons created by Tanah Basah - Flaticon</a> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/my_logo.png" />
 
-  <!-- Primary SEO -->
-  <title>Ebong Valentine – Full-Stack Developer (NestJS, React, Spring Boot)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="description"
-    content="Full-Stack Developer based in Cameroon. I build fast, scalable web and mobile applications using NestJS, React, and Spring Boot. Explore my projects and experience." />
+    <!-- Primary SEO -->
+    <title>
+      Ebong Valentine | Software Engineer | Backend, DevOps & Cloud
+    </title>
 
-  <meta name="keywords"
-    content="Ebong Valentine, Fullstack Developer Cameroon, NestJS Developer, NextJs Developer, Spring Boot Developer, Web Developer Cameroon, Mobile App Developer Africa, Prisma ORM, PostgreSQL, MongoDB" />
+    <meta
+      name="description"
+      content="Ebong Valentine is a Software Engineer from Cameroon specializing in backend engineering, system design, DevOps, cloud infrastructure, and full-stack development with NestJS, Spring Boot, React, AWS, and Docker."
+    />
 
-  <meta name="author" content="Ebong Valentine" />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#4f46e5" />
+    <meta
+      name="keywords"
+      content="Ebong Valentine, Valentine Ebong, Ebong Valentine Software Engineer, Ebong Valentine Developer, Software Engineer Cameroon, Backend Engineer Cameroon, Full Stack Engineer Cameroon, DevOps Engineer Cameroon, Cloud Engineer Cameroon, NestJS Developer, Spring Boot Developer, React Developer, AWS Developer, Docker, Terraform, PostgreSQL"
+    />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://portfolio-mlie.vercel.app/" />
+    <meta name="author" content="Ebong Valentine" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
 
-  <!-- Open Graph (Facebook, LinkedIn) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://portfolio-mlie.vercel.app/" />
-  <meta property="og:title" content="Ebong Valentine – Full-Stack Developer" />
-  <meta property="og:description"
-    content="Building scalable web and mobile apps with NestJS, React, and Spring Boot. Check out my projects and experience." />
-  <meta property="og:image" content="https://portfolio-mlie.vercel.app/og-image.png" />
+    <meta
+      name="theme-color"
+      content="#141414"
+    />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://portfolio-mlie.vercel.app/" />
-  <meta name="twitter:title" content="Ebong Valentine – Full-Stack Developer" />
-  <meta name="twitter:description"
-    content="Full-Stack Developer building high-performance applications using modern technologies." />
-  <meta name="twitter:image" content="https://portfolio-mlie.vercel.app/og-image.png" />
+    <!-- Canonical -->
+    <link
+      rel="canonical"
+      href="https://ebong-valentine.vercel.app/"
+    />
 
-  <!-- Structured Data (Enhanced JSON-LD) -->
-  <script type="application/ld+json">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+
+    <meta
+      property="og:url"
+      content="https://ebong-valentine.vercel.app/"
+    />
+
+    <meta
+      property="og:title"
+      content="Ebong Valentine | Software Engineer"
+    />
+
+    <meta
+      property="og:description"
+      content="Portfolio of Ebong Valentine, a Software Engineer specializing in backend engineering, system design, DevOps, cloud infrastructure, and full-stack development."
+    />
+
+    <meta
+      property="og:image"
+      content="https://ebong-valentine.vercel.app/og-image.png"
+    />
+
+    <meta
+      property="og:image:alt"
+      content="Ebong Valentine — Software Engineer"
+    />
+
+    <meta property="og:site_name" content="Ebong Valentine" />
+
+    <!-- Twitter / X -->
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+
+    <meta
+      name="twitter:url"
+      content="https://ebong-valentine.vercel.app/"
+    />
+
+    <meta
+      name="twitter:title"
+      content="Ebong Valentine | Software Engineer"
+    />
+
+    <meta
+      name="twitter:description"
+      content="Ebong Valentine's portfolio — backend engineering, system design, DevOps, cloud infrastructure, and full-stack development."
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://ebong-valentine.vercel.app/og-image.png"
+    />
+
+    <meta
+      name="twitter:image:alt"
+      content="Ebong Valentine — Software Engineer"
+    />
+
+    <!-- Person Structured Data -->
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://ebong-valentine.vercel.app/#person",
+
         "name": "Ebong Valentine",
-        "alternateName": "Valentine",
+        "givenName": "Valentine",
+        "familyName": "Ebong",
+        "alternateName": [
+          "Valentine",
+          "Ebong Valentine Software Engineer"
+        ],
+
         "url": "https://ebong-valentine.vercel.app/",
-        "image": "https://portfolio-mlie.vercel.app/og-image.png",
-        "jobTitle": "Full-Stack Developer",
-        "description": "Full-Stack Developer based in Cameroon specializing in NestJS, React, Spring Boot, and mobile applications.",
-        
+
+        "image": "https://ebong-valentine.vercel.app/og-image.png",
+
+        "jobTitle": "Software Engineer",
+
+        "description": "Software Engineer from Cameroon specializing in backend engineering, system design, DevOps, cloud infrastructure, and full-stack development.",
+
+        "nationality": {
+          "@type": "Country",
+          "name": "Cameroon"
+        },
+
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "CM"
         },
 
         "sameAs": [
-          "https://www.linkedin.com/in/ebong-valentine-2b1157322",
           "https://github.com/Val242",
+          "https://www.linkedin.com/in/ebong-valentine-2b1157322",
           "https://x.com/EbongValentineX"
         ],
 
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Freelance"
-        },
-
         "knowsAbout": [
-          "Web Development",
-          "Mobile App Development",
+          "Software Engineering",
+          "Backend Engineering",
+          "System Design",
+          "API Design",
+          "Distributed Systems",
+          "DevOps",
+          "Cloud Computing",
+          "AWS",
+          "Docker",
+          "Terraform",
+          "Ansible",
+          "Linux",
+          "CI/CD",
           "NestJS",
-          "React",
+          "Node.js",
+          "Java",
           "Spring Boot",
-          "Prisma ORM",
+          "Laravel",
+          "React",
+          "React Native",
+          "TypeScript",
           "PostgreSQL",
           "MongoDB",
-          "TailwindCSS"
+          "Prisma"
         ]
       }
     </script>
 
-  <!-- Fonts Optimization -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Website Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://ebong-valentine.vercel.app/#website",
+        "url": "https://ebong-valentine.vercel.app/",
+        "name": "Ebong Valentine",
+        "description": "Portfolio of Ebong Valentine, a Software Engineer specializing in backend engineering, system design, DevOps, cloud infrastructure, and full-stack development.",
+        "author": {
+          "@id": "https://ebong-valentine.vercel.app/#person"
+        }
+      }
+    </script>
 
-</head>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
+  <body>
+    <div id="root"></div>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
