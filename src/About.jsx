@@ -39,6 +39,12 @@ function About() {
       period: "May 2026 – Aug 2026",
       desc: "Build a scalable cross-platform React Native application focused on pregnancy and maternal health guidance. Develop reusable UI components, structured health content systems, and guided onboarding flows while maintaining a modular frontend architecture for future guides, articles, and community features.",
     },
+    {
+      role: "Software Engineering Intern",
+      company: "Tech Chantier",
+      period: "August 2026 – January 2027",
+      desc: "Contribute to the TCPoS mobile application by implementing complete English and French localization using i18n. Translated the application interface and built dynamic language switching between English and French for a more accessible user experience.",
+    },
   ];
 
   const leadership = [
