@@ -31,19 +31,19 @@ function About() {
       role: "Lead Software Engineer",
       company: "Relay — Intelligent Transition Platform",
       period: "June 2026 – Present",
-      desc: "Lead engineering across the Relay platform, contributing to both frontend and backend development while guiding system architecture and technical implementation. Design scalable REST APIs and data models using NestJS, Prisma, and PostgreSQL, manage the Neon cloud database, and lead frontend development across the platform. Build data import pipelines for large Excel datasets while focusing on scalability, data integrity, authentication, and reliable delivery through CI/CD.",
+      desc: "Lead engineering across the Relay platform, contributing to frontend and backend development while guiding system architecture and technical implementation. Design scalable APIs, data models, and application workflows, manage the cloud database, and lead frontend development across the platform. Build data import pipelines for large datasets while focusing on scalability, data integrity, authentication, and reliable delivery through CI/CD.",
     },
     {
       role: "Frontend Developer",
       company: "MammyHealth — Pregnancy & Maternal Health Platform",
       period: "May 2026 – Aug 2026",
-      desc: "Developed a scalable cross-platform React Native application focused on pregnancy and maternal health guidance. Built reusable UI components, structured health content systems, and guided onboarding flows while maintaining a modular frontend architecture for guides, articles, and community features.",
+      desc: "Developed a scalable cross-platform mobile application focused on pregnancy and maternal health guidance. Built reusable UI components, structured health content systems, and guided onboarding flows while maintaining a modular frontend architecture for guides, articles, and community features.",
     },
     {
       role: "Software Engineering Intern",
       company: "Tech Chantier",
       period: "August 2026 – Present",
-      desc: "Contribute to the TCPoS Mobile application by implementing complete English and French localization using i18n. Translated the application interface and implemented dynamic language switching between English and French, improving accessibility and consistency across the mobile experience.",
+      desc: "Contribute to the TCPoS Mobile application by implementing complete English and French localization. Translated the application interface and implemented dynamic language switching between both languages, improving accessibility and consistency across the mobile experience.",
     },
   ];
 
