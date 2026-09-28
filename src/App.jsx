@@ -28,10 +28,11 @@ function App() {
   const role = useRoleSwitcher({
     roles: [
       "SOFTWARE ENGINEER",
+      "MOBILE APP DEVELOPER",
+      "FULL-STACK ENGINEER",
+      "BACKEND ENGINEER",
       "DEVOPS ENGINEER",
       // "CLOUD ENGINEER",
-      "BACKEND ENGINEER",
-      "FULL-STACK ENGINEER",
     ],
   });
 
@@ -62,6 +63,10 @@ function App() {
     { icon: SiNestjs, name: "NestJS" },
     { icon: SiSpringboot, name: "Spring Boot" },
     { icon: FaLaravel, name: "Laravel" },
+    // Frontend
+    { icon: SiTypescript, name: "TypeScript" },
+    { icon: FaReact, name: "React" },
+    { icon: SiTailwindcss, name: "TailwindCSS" },
 
     // Databases
     { icon: SiPostgresql, name: "PostgreSQL" },
@@ -78,11 +83,6 @@ function App() {
 
     // Cloud
     { icon: FaAws, name: "AWS" },
-
-    // Frontend
-    { icon: SiTypescript, name: "TypeScript" },
-    { icon: FaReact, name: "React" },
-    { icon: SiTailwindcss, name: "TailwindCSS" },
   ];
 
   const textEntry = {
@@ -133,10 +133,11 @@ function App() {
               </h1>
 
               <p className="text-muted mt-4 text-lg leading-relaxed lg:text-xl">
-                I build reliable backend systems, automate infrastructure, and
-                design scalable applications. I specialize in backend
-                engineering, DevOps, cloud infrastructure, and full-stack
-                development.
+                I build modern web and mobile applications with a strong focus
+                on full-stack development, backend engineering, and scalable
+                APIs. I work across the stack with technologies like React,
+                React Native, Next.js, NestJS, Spring Boot, and Laravel, while
+                also developing my expertise in DevOps and cloud infrastructure.
               </p>
             </motion.div>
 

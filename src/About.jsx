@@ -31,19 +31,19 @@ function About() {
       role: "Lead Software Engineer",
       company: "Relay — Intelligent Transition Platform",
       period: "June 2026 – Present",
-      desc: "Lead backend engineering and system architecture for a transition intelligence platform serving service members and veterans. Design scalable system and REST API architectures using NestJS, Prisma, and PostgreSQL, covering transitions, phases, signals, checklist items, places, groups, and user state. Build data import pipelines for large Excel datasets while focusing on scalability, data integrity, authentication, and CI/CD.",
+      desc: "Lead engineering across the Relay platform, contributing to both frontend and backend development while guiding system architecture and technical implementation. Design scalable REST APIs and data models using NestJS, Prisma, and PostgreSQL, manage the Neon cloud database, and lead frontend development across the platform. Build data import pipelines for large Excel datasets while focusing on scalability, data integrity, authentication, and reliable delivery through CI/CD.",
     },
     {
       role: "Frontend Developer",
       company: "MammyHealth — Pregnancy & Maternal Health Platform",
       period: "May 2026 – Aug 2026",
-      desc: "Build a scalable cross-platform React Native application focused on pregnancy and maternal health guidance. Develop reusable UI components, structured health content systems, and guided onboarding flows while maintaining a modular frontend architecture for future guides, articles, and community features.",
+      desc: "Developed a scalable cross-platform React Native application focused on pregnancy and maternal health guidance. Built reusable UI components, structured health content systems, and guided onboarding flows while maintaining a modular frontend architecture for guides, articles, and community features.",
     },
     {
       role: "Software Engineering Intern",
       company: "Tech Chantier",
-      period: "August 2026 – January 2027",
-      desc: "Contribute to the TCPoS mobile application by implementing complete English and French localization using i18n. Translated the application interface and built dynamic language switching between English and French for a more accessible user experience.",
+      period: "August 2026 – Present",
+      desc: "Contribute to the TCPoS Mobile application by implementing complete English and French localization using i18n. Translated the application interface and implemented dynamic language switching between English and French, improving accessibility and consistency across the mobile experience.",
     },
   ];
 
@@ -89,26 +89,25 @@ function About() {
               <span className="font-bold text-foreground underline decoration-primary decoration-4 underline-offset-4">
                 Valentine
               </span>
-              , a Full-Stack Software Engineer with a strong focus on backend
-              engineering, DevOps, and building reliable, scalable systems.
+              , a Full-Stack Software Engineer focused on building modern web
+              and mobile applications, scalable backend systems, and reliable
+              APIs.
             </p>
 
             <p>
-              I specialize in backend development and API architecture using
-              TypeScript, NestJS, Java, and Spring Boot, with hands-on
-              experience designing production-ready services, databases, and
-              distributed system components. I also work extensively with DevOps
-              and cloud infrastructure, using Docker, CI/CD, AWS, Terraform, and
-              Linux to automate, deploy, and operate applications reliably.
+              I work across the stack using technologies such as React, React
+              Native, Next.js, TypeScript, NestJS, Spring Boot, and Laravel. I
+              have hands-on experience designing APIs, relational databases,
+              application architectures, and production-ready features across
+              web and mobile platforms.
             </p>
 
             <p>
-              Alongside my backend and infrastructure expertise, I have strong
-              frontend experience building modern web and mobile interfaces with
-              React, Next.js, and React Native. I enjoy working across the stack
-              while paying particular attention to system architecture,
-              scalability, automation, and delivering software that is built to
-              run reliably in production.
+              Alongside my software development work, I am actively expanding my
+              expertise in DevOps and cloud engineering. I work with Docker,
+              CI/CD, AWS, Terraform, Linux, and related infrastructure tools
+              while developing a deeper understanding of deployment automation,
+              scalability, and reliable production systems.
             </p>
           </div>
 
